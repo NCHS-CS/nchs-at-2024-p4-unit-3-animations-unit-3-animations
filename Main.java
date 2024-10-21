@@ -47,8 +47,8 @@ class Main extends JFrame  {
 	private AnimatedPanel[] panels;
 	private int currentPanel = -1;
 	
-	// This is used to establish the animation speed
-	public static int delay = 100;
+	// This is used to establish the animation speed (delay(ms) = 1000/fps_target)
+	public static int DELAY = 1000 / 30;
 	
 	public static void main(String[] args) throws InterruptedException {
 		Main theGUI = new Main();
@@ -167,7 +167,7 @@ class Main extends JFrame  {
                 // This informs the UI Thread to repaint this component
 				repaint();
                 // This causes our main thread to wait... to sleep... for a bit.
-				Thread.sleep(Main.delay);
+				Thread.sleep(Main.DELAY);
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -283,13 +283,13 @@ class Main extends JFrame  {
 		item = new JMenuItem("Slower animation", 'S');
 		// Q: Why have the Math.min here? What does it accomplish?
 		// A:
-		item.addActionListener(e -> Main.delay = Math.min(500, Main.delay+10));
+		item.addActionListener(e -> Main.DELAY = Math.min(500, Main.DELAY+10));
 		// Q: What is an accelerator? How does it impact the user experience/functionality?
 		// A:
 		item.setAccelerator(KeyStroke.getKeyStroke('-', InputEvent.CTRL_DOWN_MASK));
 		menu.add(item);
 		item = new JMenuItem("Faster animation", 'F');
-		item.addActionListener(e -> Main.delay = Math.max(10, Main.delay-10));
+		item.addActionListener(e -> Main.DELAY = Math.max(10, Main.DELAY-10));
 		item.setAccelerator(KeyStroke.getKeyStroke('=', InputEvent.CTRL_DOWN_MASK));
 		menu.add(item);
 		

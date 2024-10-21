@@ -98,10 +98,13 @@ public class BallPanel extends AnimatedPanel {
         // BEFORE we work on the below TODOs, just draw stuff
         // using the Graphics object.
 
-        // TODO: set the background color on the JPanel to White
+        this.setBackground(Color.WHITE);
 
-        // TODO: Use the Graphics object to clear the whole panel/canvas,
+        // Use the Graphics object to clear the whole panel/canvas,
         // set the pen color, and draw our floor
+        g.clearRect(0, 0, this.getWidth(), this.getHeight());
+        g.setColor(Color.GRAY);
+        g.drawLine(0, BallPanel.FLOOR, this.getWidth(), BallPanel.FLOOR);
 
         // TODO: Draw stuff (such as all the balls)
 
