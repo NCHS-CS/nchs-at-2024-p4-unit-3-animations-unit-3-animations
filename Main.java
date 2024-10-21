@@ -94,7 +94,7 @@ class Main extends JFrame  {
         // NOTE : This method will be similar to the Calculator createFrame
         // method. Leverage that code to complete these TODOs.
         
-		this.setTitle("My animator");
+        this.setTitle("My animator");
 		
 		this.setSize(WIDTH, HEIGHT);
 		
