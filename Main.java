@@ -94,16 +94,16 @@ class Main extends JFrame  {
         // NOTE : This method will be similar to the Calculator createFrame
         // method. Leverage that code to complete these TODOs.
         
-		// TODO: Set the title found in the Title Bar of the JFrame
+		this.setTitle("My animator");
 		
-		// TODO: Set the size of the main Window (this JFrame) to WIDTH, HEIGHT
+		this.setSize(WIDTH, HEIGHT);
 		
 		// Allows the application to properly close when the
 		// user clicks on the Red-X. It tells the all threads
         // to terminate. This will end the main thread.
-        // TODO: call the method to Exit on Close.
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // TODO: avoid the use of a LayoutManager
+		this.setLayout(null);
         
         // The JFrame has a menu attached to it
 		addMenuBar();
@@ -152,6 +152,17 @@ class Main extends JFrame  {
 		Main.done = false;
 		try {			
 			while (!Main.done) {
+
+				//TODO: Need to do this in an invokelater
+
+				/*
+				 *   // Update UI components on the EDT
+                SwingUtilities.invokeLater(() -> {
+                    // ... (update UI components)
+                });
+				 * 
+				 */
+
 				panels[currentPanel].updateAnimation();
                 // This informs the UI Thread to repaint this component
 				repaint();
