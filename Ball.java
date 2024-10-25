@@ -40,7 +40,10 @@ public class Ball {
 	}
 	
 	public boolean inside(int x, int y) {
-		// TODO: Not Yet Implemented
+		if ((x >= this.x && x <= this.x+size)
+            &&
+
+        }
         return false;
 	}
 

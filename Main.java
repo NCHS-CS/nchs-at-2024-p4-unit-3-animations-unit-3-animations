@@ -216,6 +216,7 @@ class Main extends JFrame  {
 		item.addActionListener(e -> ((BallPanel)panels[BALL_PANEL]).addBall());
 		menu.add(item);
 		item = new JMenuItem("More Gravity", 'G');
+		item.addActionListener(e -> Ball.gravity -= 1);
         // item.addActionListener( ... what goes here? ...)
         // Answer these ALSO in your NOTEBOOK:
         // Q: How does the action listener work?
@@ -228,7 +229,7 @@ class Main extends JFrame  {
         
 		menu.add(item);
 		item = new JMenuItem("Less Gravity", 'L');
-        // item.addActionListener( ... what goes here? ...)
+		item.addActionListener(e -> Ball.gravity += 1);
 		menu.add(item);
 		bar.add(menu);
 		

@@ -63,8 +63,14 @@ public class BallPanel extends AnimatedPanel {
         // to get around having implement all, we use the MouseAdapter class
         // and override just the one method we're interested in.
 
-        // TODO: Hook up the mousePressed event to call onMouseClicked
+        // Hook up the mousePressed event to call onMouseClicked
         // using an inline/inner anonymous class
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent me) {
+                onMouseClicked(me);
+            }
+        });
     }
 
     /**
@@ -74,11 +80,10 @@ public class BallPanel extends AnimatedPanel {
      * @param me The MouseEvent data structure provided by the event.
      */
     private void onMouseClicked(MouseEvent me) {
-        // TODO: get the coordinates of the click event.
-        int x = 0;
-        int y = 0;
+        // get the coordinates of the click event.
+        int x = me.getX();
+        int y = me.getY();
         System.out.printf("Mouse Clicked at (%d, %d)\n", x, y);
-        // TODO: Do something else creative with click events
     }
 
     public void moveBalls() {
