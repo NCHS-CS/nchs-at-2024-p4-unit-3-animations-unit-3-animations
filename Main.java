@@ -273,7 +273,7 @@ class Main extends JFrame  {
 		item.addActionListener(e -> showPanel(BALL_PANEL));
 		menu.add(item);
 		item = new JMenuItem("Show Banner", 'A');
-		// item.addActionListener( ... what goes here? ...)
+		item.addActionListener(e -> showPanel(BANNER_PANEL));
 		menu.add(item);
 		item = new JMenuItem("Show Sparks", 'K');
 		// item.addActionListener( ... what goes here? ...)

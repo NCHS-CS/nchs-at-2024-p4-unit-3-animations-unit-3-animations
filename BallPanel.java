@@ -84,6 +84,15 @@ public class BallPanel extends AnimatedPanel {
         int x = me.getX();
         int y = me.getY();
         System.out.printf("Mouse Clicked at (%d, %d)\n", x, y);
+        checkInflate(x, y);
+    }
+
+    private void checkInflate(int x, int y) {
+        for (Ball ball: balls) {
+            if (ball.inside(x, y)) {
+                ball.inflate();
+            }
+        }        
     }
 
     public void moveBalls() {

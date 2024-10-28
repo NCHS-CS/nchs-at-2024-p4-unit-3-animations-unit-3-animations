@@ -40,12 +40,16 @@ public class Ball {
 	}
 	
 	public boolean inside(int x, int y) {
-		if ((x >= this.x && x <= this.x+size)
-            &&
+       
+        int xCenter = this.x + size / 2;
+        int yCenter = this.y + size / 2;
 
-        }
-        return false;
+        return Math.hypot(xCenter - x, yCenter - y) < size / 2;
 	}
+
+    public void inflate() {
+        size += 15;
+    }
 
     /*
     * Update the vertical velocity according to gravity
